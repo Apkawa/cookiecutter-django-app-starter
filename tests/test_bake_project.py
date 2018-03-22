@@ -277,8 +277,8 @@ def test_make_migrations(cookies):
 def test_run_tests(cookies):
     """generated project should run tests"""
     with bake_in_temp_dir(cookies, extra_context={}) as result:
-        res = result.project.join('runtests.py')
+        res = result.project.join('')
         try:
-            sh.python(res)
+            sh.pytest(res)
         except sh.ErrorReturnCode as e:
             pytest.fail(str(e))

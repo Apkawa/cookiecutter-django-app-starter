@@ -24,6 +24,7 @@ version = get_version("{{ cookiecutter.app_name }}", "__init__.py")
 if sys.argv[-1] == 'publish':
     try:
         import wheel
+
         print("Wheel version: ", wheel.__version__)
     except ImportError:
         print('Wheel library missing. Please run "pip install wheel"')
@@ -38,9 +39,21 @@ if sys.argv[-1] == 'tag':
     os.system("git push --tags")
     sys.exit()
 
+if sys.argv[1] == 'bumpversion':
+    print("bumpversion")
+    try:
+        part = sys.argv[2]
+    except IndexError:
+        part = 'patch'
+
+    os.system("bumpversion --no-tag --config-file setup.cfg %s" % part)
+    os.system("git push --tags")
+    sys.exit()
+
 __doc__ = """{{cookiecutter.description}}"""
 
 project_name = '{{cookiecutter.project_name}}'
+app_name = '{{cookiecutter.app_name}}'
 
 ROOT = os.path.dirname(__file__)
 
@@ -57,8 +70,8 @@ setup(
     long_description_content_type='text/markdown',
     url="{{cookiecutter.repo_url}}",
     author="{{cookiecutter.author_name}}",
-    author_email='{{cookiecutter.author_name}}',
-    packages=[package for package in find_packages() if package.startswith(project_name)],
+    author_email='{{cookiecutter.author_email}}',
+    packages=[package for package in find_packages() if package.startswith(app_name)],
     install_requires=['six'],
     zip_safe=False,
     include_package_data=True,

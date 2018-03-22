@@ -10,8 +10,8 @@ often legacy code from one project to the other. This template, inspired by `coo
 is designed to allow Django developers the ability to break free from cargo-cult configuration and follow
 a common pattern dictated by the experts and maintained here.
 
-.. _Cookiecutter: https://github.com/audreyr/cookiecutter
-.. _cookiecutter-pypackage: https://github.com/audreyr/cookiecutter-pypackage
+* [Cookiecutter](https://github.com/audreyr/cookiecutter)
+* [cookiecutter-pypackage](https://github.com/audreyr/cookiecutter-pypackage)
 
 Features
 --------

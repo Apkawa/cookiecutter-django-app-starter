@@ -1,5 +1,6 @@
 tmp/
 .idea/
+.pytest_cache/
 *.py[cod]
 
 # C extensions
