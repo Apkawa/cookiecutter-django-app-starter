@@ -1,0 +1,22 @@
+{
+  "project_name": "django-my-app",
+  "app_name": "my_app",
+  "app_config_name": "{{ cookiecutter.app_name.replace('_', ' ')|title()|replace(' ', '') }}Config",
+  "author_name": "author",
+  "author_email": "author@example.com",
+  "description": "",
+  "license": [
+    "MIT",
+    "Apache",
+    "GPLv3",
+    "No License"
+  ],
+  "current_year": "{% now 'utc', '%Y' %}",
+  "repo_name": "{{cookiecutter.author_name}}/{{cookiecutter.project_name}}",
+  "repo_url": "https://githib.com/{{cookiecutter.repo_name}}",
+  "full_legal_name_of_project_owner": "{{ cookiecutter.author_name }} <{{cookiecutter.author_email}}",
+  "use_celery": [
+    "no",
+    "yes"
+  ]
+}
