@@ -1,3 +1,3 @@
 # -*- coding: utf-8 -*-
 
-default_app_config = 'test.apps.TestConfig'
+default_app_config = 'tests.apps.TestConfig'
